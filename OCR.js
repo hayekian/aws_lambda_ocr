@@ -52,7 +52,10 @@ console.log("Reading options from event:\n", JSON.stringify(event));
                         function ( err, data  )
                                 {
                                 console.log('got s3 file');
-                                fs.writeFile("/tmp/test.tif", data.Body, function(err) {
+                                var d = new Date();
+                                var n = d.getTime();
+                                var fileName = n + '_' + dstKey;
+                                fs.writeFile("/tmp/" + fileName, data.Body, function(err) {
 
                                         console.log('wrote file to temp');
 
@@ -60,7 +63,7 @@ console.log("Reading options from event:\n", JSON.stringify(event));
                                                 binary: __dirname +'/tesseract'
                                         };
 
-                                        tesseract.process('/tmp/test.tif',options,function(err, text) {
+                                        tesseract.process('/tmp/'+fileName ,options,function(err, text) {
                                                 console.log('tess ran..text = ' + text);
                                                 s3.putObject({
                                                         Bucket: dstBucket,
@@ -70,6 +73,7 @@ console.log("Reading options from event:\n", JSON.stringify(event));
                                                 },
                                                 function(){
                                                         console.log('Finished...');
+                                                        fs.unlink('/tmp/' + fileName);
                                                         });
 
 
