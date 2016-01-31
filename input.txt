@@ -1,0 +1,38 @@
+{
+    "Records": [
+        {
+            "eventVersion": "2.1",
+            "eventSource": "aws:s3",
+            "awsRegion": "us-east-1",
+            "eventTime": "2015-12-17T07:50:50.357Z",
+            "eventName": "ObjectCreated:Put",
+            "userIdentity": {
+                "principalId": "A2XEVM311YJJGF"
+            },
+            "requestParameters": {
+                "sourceIPAddress": "71.196.59.142"
+            },
+            "responseElements": {
+                "x-amz-request-id": "FCAC7DC3087EE45D",
+                "x-amz-id-2": "yJnAupLz0sK1gPJTApu+u54s2ByeLcbfCgk0KCBGMKH/aGQDwd9NlRn7cdO3TTHb"
+            },
+            "s3": {
+                "s3SchemaVersion": "1.0",
+                "configurationId": "PerformOCR",
+                "bucket": {
+                    "name": "hayekian-ocr-src",
+                    "ownerIdentity": {
+                        "principalId": "A2XEVM311YJJGF"
+                    },
+                    "arn": "arn:aws:s3:::hayekian-ocr-src"
+                },
+                "object": {
+                    "key": "totiff.tif",
+                    "size": 347562,
+                    "eTag": "df8973d9ae252344fd92a92bd859932e",
+                    "sequencer": "005672695A34EABE8B"
+                }
+            }
+        }
+    ]
+}
