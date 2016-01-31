@@ -1,6 +1,6 @@
 # aws_lambda_ocr
 
-WARNING... this project is more of a repertoir of AWS Lambda related functionality and examples...
+WARNING... this project is more of a repertoire of AWS Lambda related functionality and examples...
 
 It implements an AWS lambda function that automatically OCRs files/images dropped in one bucket and places them in another as text
 
